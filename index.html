@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue Shopping List App</title>
+  </head>
+  <body>
+    <div id="app">
+      <section>
+
+      </section>
+        <h2 v-if="noTitle">{{title}}</h2>
+        <p style="color:red" v-if="noItem">You must input an item.</p>
+        <p style="color:red" v-if="alreadyHasItem">You already have this item</p>
+        <ul>
+            <li v-for="item in items">{{item}}</li>
+        </ul>
+        <input v-model="newItem" type="text">
+        <button v-on:click="addItem">Add Item</button>
+        <br><br>
+        <label>Type to Change Title</label>
+        <input type="text" v-model="title">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
